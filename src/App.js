@@ -35,15 +35,15 @@ class App extends Component {
     
   }
 
-  loadUser = (data) => {
-    this.setState({user: {
-      id: data.id,
-      name: data.name,
-      email: data.email,
-      entries: data.entries,
-      joined: data.joined
-    }})
-  }
+    loadUser = (data) => {
+      this.setState({user: {
+        id: data.id,
+        name: data.name,
+        email: data.email,
+        entries: data.entries,
+        joined: data.joined
+      }})
+    }
 
 
 
@@ -70,7 +70,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-    fetch('http://localhost:3001/imageurl', {
+    fetch('http://localhost:10000/imageurl', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -81,7 +81,7 @@ class App extends Component {
     .then(response => {
         console.log('hi', response)
         if (response) {
-          fetch('http://localhost:3001/image', {
+          fetch('http://localhost:10000/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -99,11 +99,11 @@ class App extends Component {
         this.displayFaceBox(this.calculateFaceLocation(response))
       })
       
-      .catch(err => console.log("nuuu,api nu functioneaza in app.js"));
+      .catch(err => console.log("nuuu,nu merge host host backend"));
     };
 
 
-  
+  //Schimbarea routelor
   onRouteChange = (route) => {
     if (route === 'signout') {
       this.setState(intialState)

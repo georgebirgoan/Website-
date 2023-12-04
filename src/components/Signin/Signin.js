@@ -1,6 +1,6 @@
 import "tachyons"
 import React from 'react';
-import Logo from '../Logo/Logo';
+
 
 
 class Signin extends React.Component {
@@ -23,7 +23,7 @@ class Signin extends React.Component {
   //cookies 
 
   onSubmitSignIn = () => {
-    fetch('http://localhost:3001/signin', {
+    fetch('http://localhost:10000/signin', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -42,7 +42,7 @@ class Signin extends React.Component {
 
   render() {
     const { onRouteChange } = this.props;
-    <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange} /> 
+
     return (
       
       <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
